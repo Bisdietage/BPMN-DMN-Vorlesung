@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="interestDRD" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.19.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.20.0">
+  <decision id="calculateInterest" name="Interest" camunda:historyTimeToLive="P5D">
+    <informationRequirement id="InformationRequirement_05org19">
+      <requiredInput href="#months" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_1xxvp8d">
+      <requiredInput href="#sum" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0u3503q">
+      <input id="Input_1" biodi:width="192" camunda:inputVariable="months">
+        <inputExpression id="InputExpression_1" typeRef="long">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_11ayq4e" camunda:inputVariable="sum">
+        <inputExpression id="LiteralExpression_12xye6o" typeRef="long">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" typeRef="long" />
+      <rule id="DecisionRule_10m6psh">
+        <inputEntry id="UnaryTests_0k3zxxu">
+          <text>months &lt;= 50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15krwv5">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1dscee5">
+          <text>15</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hpzmie">
+        <inputEntry id="UnaryTests_0b0ngo5">
+          <text>months &gt; 50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gspjg4">
+          <text>sum &gt; 100000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0obgfd5">
+          <text>5</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_048lob9">
+        <inputEntry id="UnaryTests_07kwlfm">
+          <text>months &gt; 50</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05zb9qt">
+          <text>sum &lt;= 100000</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0d2uy0z">
+          <text>10</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="months" name="months" />
+  <inputData id="sum" name="sum" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="calculateInterest">
+        <dc:Bounds height="80" width="180" x="270" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1t2cw8e" dmnElementRef="months">
+        <dc:Bounds height="45" width="125" x="157" y="287" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0suhddw" dmnElementRef="InformationRequirement_05org19">
+        <di:waypoint x="220" y="287" />
+        <di:waypoint x="330" y="180" />
+        <di:waypoint x="330" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_0n01rtj" dmnElementRef="sum">
+        <dc:Bounds height="45" width="125" x="387" y="287" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_14sywia" dmnElementRef="InformationRequirement_1xxvp8d">
+        <di:waypoint x="450" y="287" />
+        <di:waypoint x="390" y="180" />
+        <di:waypoint x="390" y="160" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
