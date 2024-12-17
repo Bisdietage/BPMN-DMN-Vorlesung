@@ -2,9 +2,9 @@
 
 This Repository is for education only, It contains a stripped Camunda 7 Community Docker Image and examples how to use Camunda 7 with external Workers
 
-##Prerequisites
+## Prerequisites
 
-All process applications are provided via container and are usable using docker desktop or docker cli. Except for this no further requirements and dependencies have to be installed.
+All process applications are delivered as containers and can be used with Docker Desktop or the Docker CLI. Beyond that, no additional requirements or dependencies are needed.
 
 ### Docker
 
