@@ -1,12 +1,15 @@
 # External Worker
 
-This directory contains the external-worker provided, you can add your own external worker.
+This directory includes a pre-built external worker; you can add your own.
 
 
 ## Structure
 
-External workers are structured per programming language and per process application. Every External worker directory contains a Dockerfile for containerized deployment, the source files needed and a README with a short description.
-templates are provided per programming language in templates directory   
+External workers are categorized by programming language and process application.
+Each worker directory contains a Dockerfile for containerization, necessary source
+code, and a README with a brief description. Language-specific templates are
+available in the templates directory.
+
 
 ## How to Use
 
